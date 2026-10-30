@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply font-sans text-ink bg-white antialiased; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8; }
+  .section { @apply py-16 sm:py-24; }
+  .eyebrow { @apply inline-block rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary; }
+  .h2 { @apply mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl; }
+  .lead { @apply mt-4 text-base text-slate sm:text-lg; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary; }
+  .btn-primary { @apply bg-primary text-white shadow-md2 hover:bg-primary-dark; }
+  .btn-amber { @apply bg-amber text-navy hover:bg-amber-dark hover:text-white; }
+  .btn-ghost { @apply border border-line bg-white text-navy hover:border-primary hover:text-primary; }
+  .card { @apply rounded-2xl border border-line bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md2; }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+.reveal { animation: reveal-up .7s ease-out both; }
+.reveal-delay { animation-delay: .15s; }
+@media (prefers-reduced-motion: reduce) { .reveal { animation: none; } }
